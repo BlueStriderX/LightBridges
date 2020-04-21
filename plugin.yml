@@ -1,0 +1,13 @@
+main: thederpgamer.edenkingdoms.Main
+name: EdenKingdoms
+author: TheDerpGamerX
+version: 0.1.1
+api-version: 1.15.0
+commands:
+ help:
+  usage: /ek help
+  description: Opens horse GUI
+  aliases:
+   - /ek
+   - /edenkingdoms
+   - /edenkingdoms help
