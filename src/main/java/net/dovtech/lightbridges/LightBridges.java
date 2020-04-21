@@ -1,5 +1,6 @@
 package net.dovtech.lightbridges;
 
+import net.dovtech.lightbridges.bridges.LightBridge;
 import net.dovtech.lightbridges.commands.LBCreate;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -17,9 +18,9 @@ public class LightBridges extends JavaPlugin {
   public void onEnable() {
 	plugin = getPlugin();
     System.out.println("Loading " + pluginFile + "...");
-    
-    //Events
-    //getServer().getPluginManager().registerEvents(new <EventClass>(), this);
+
+    //Event Listeners
+    getServer().getPluginManager().registerEvents(new LightBridge(), this);
     
     //Commands
     getCommand("lb create").setExecutor(new LBCreate());

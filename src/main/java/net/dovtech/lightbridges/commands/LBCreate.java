@@ -1,5 +1,6 @@
 package net.dovtech.lightbridges.commands;
 
+import net.dovtech.lightbridges.bridges.LightBridge;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -23,6 +24,7 @@ public class LBCreate implements CommandExecutor {
     private Block block2 = null;
     private Block controllerBlock = null;
     private int n = 1;
+    private LightBridge lightBridge;
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -93,9 +95,9 @@ public class LBCreate implements CommandExecutor {
                     player.sendMessage("Right click the controller block");
                     updateLore();
                 }
-
             } else if(n == 3) {
                 controllerBlock = playerInteractEvent.getClickedBlock();
+                lightBridge = new LightBridge(controllerBlock, block1, block2);
                 player.getInventory().remove(bridgeWand);
             }
         }

@@ -42,7 +42,7 @@ public enum BridgeType {
         return blockData;
     }
 
-    public Material getGetBlockMaterial() {
+    public Material getBlockMaterial() {
         return blockMaterial;
     }
 }
